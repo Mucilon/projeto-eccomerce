@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # TODO: Remover debug
-    'debug_toolbar'    
+    'debug_toolbar',
+
     'crispy_forms',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
