@@ -3,7 +3,7 @@ from django.forms import ValidationError
 from django.contrib.auth.models import User
 
 import re
-from utils.validacpf import validacpf
+from utils.validacpf import valida_cpf
 
 class Perfil(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Usuário')
@@ -58,7 +58,7 @@ class Perfil(models.Model):
     def clean(self):
         error_messages = {}
 
-        if not validacpf(self.cpf):
+        if not valida_cpf(self.cpf):
             error_messages['cpf'] = 'Digite um CPF válido.'
         if re.search(r'[^0-9]', self.cpf) or len(self.cep) < 8:
             error_messages['cep'] = 'CEP inválido, digite os 8 digitos do CEP.'

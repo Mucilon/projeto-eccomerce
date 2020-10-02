@@ -7,6 +7,7 @@ class VariacaoInline(admin.TabularInline):
     extra = 1
 
 class ProdutoAdmin(admin.ModelAdmin):
+    list_display = ['nome','get_preco_formatado', 'get_preco_promo_formatado']
     inlines = [VariacaoInline]
 
 admin.site.register(Produto, ProdutoAdmin)
