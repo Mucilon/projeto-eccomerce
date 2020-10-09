@@ -159,8 +159,6 @@ class Carrinho(View):
     def get(self, *args, **kwargs):
         return render(self.request, 'produto/carrinho.html')
 
-class Finalizar(View):
-    pass
 
 class ResumoDaCompra(View):
     def get(self, *args, **kwargs):
@@ -182,4 +180,3 @@ class ResumoDaCompra(View):
         }
 
         return render(self.request, 'produto/resumodacompra.html', contexto)
-
